@@ -13,9 +13,9 @@ const getGameData = () => {
   };
 };
 
-const runBrainEvenGame = () => {
+const runGame = () => {
   const gameEngine = new GameEngine(TASK_DESCRIPTION, getGameData);
   gameEngine.start();
 };
 
-export default runBrainEvenGame;
+export default runGame;
