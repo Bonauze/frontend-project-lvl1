@@ -21,6 +21,7 @@ const getRandomProgression = (amountOfNumbers) => {
 const getGameData = () => {
   const progression = getRandomProgression(AMOUNT_OF_NUMBERS);
   const randomIndex = getRandomNumber(0, progression.length - 1);
+
   const question = progression.map((number, index) => (index === randomIndex ? '..' : number)).join(' ');
   const answer = progression[randomIndex].toString();
 

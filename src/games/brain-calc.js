@@ -9,7 +9,7 @@ const OPERATORS = {
   MULTIPLICATION: '*',
 };
 
-const getAnswer = (firstNumber, secondNumber, operator) => {
+const calcExpression = (firstNumber, secondNumber, operator) => {
   switch (operator) {
     case OPERATORS.PLUS:
       return firstNumber + secondNumber;
@@ -32,16 +32,15 @@ const getGameData = () => {
   const firstNumber = getRandomNumber(1, 100);
   const secondNumber = getRandomNumber(1, 100);
   const operator = getRandomOperator(OPERATORS);
-  const answer = getAnswer(firstNumber, secondNumber, operator).toString();
 
-  return {
-    question: `${firstNumber} ${operator} ${secondNumber}`,
-    answer,
-  };
+  const question = `${firstNumber} ${operator} ${secondNumber}`;
+  const answer = calcExpression(firstNumber, secondNumber, operator).toString();
+
+  return { question, answer };
 };
 
 const runGame = () => {
-  const gameEngine = new GameEngine(TASK_DESCRIPTION, getGameData);
+  const gameEngine = GameEngine(TASK_DESCRIPTION, getGameData);
   gameEngine.start();
 };
 

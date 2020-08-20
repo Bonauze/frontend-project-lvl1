@@ -3,7 +3,7 @@ import GameEngine from '../game-engine.js';
 
 const TASK_DESCRIPTION = 'Find the greatest common divisor of given numbers.';
 
-const getAnswer = (firstNumber, secondNumber) => {
+const getGreatestCommonDivisor = (firstNumber, secondNumber) => {
   const numbers = [firstNumber, secondNumber].sort().reverse();
 
   while (numbers[numbers.length - 1] !== 0) {
@@ -19,12 +19,11 @@ const getAnswer = (firstNumber, secondNumber) => {
 const getGameData = () => {
   const firstNumber = getRandomNumber(1, 100);
   const secondNumber = getRandomNumber(1, 100);
-  const answer = getAnswer(firstNumber, secondNumber).toString();
 
-  return {
-    question: `${firstNumber} ${secondNumber}`,
-    answer,
-  };
+  const question = `${firstNumber} ${secondNumber}`;
+  const answer = getGreatestCommonDivisor(firstNumber, secondNumber).toString();
+
+  return { question, answer };
 };
 
 const runGame = () => {
