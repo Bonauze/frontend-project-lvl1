@@ -27,9 +27,11 @@ function GameEngine(taskDescription, getGameData) {
   };
 
   const finish = () => {
-    const { userName, isWinner } = this;
-    const finishMessage = isWinner ? getVictoryMessage(userName) : getLosingMessage(userName);
-    showMessage(finishMessage);
+    if (isWinner) {
+      showMessage(getVictoryMessage(userName));
+    } else {
+      showMessage(getLosingMessage(userName));
+    }
   };
 
   return {
