@@ -14,7 +14,7 @@ const getGameData = () => {
 };
 
 const runGame = () => {
-  const gameEngine = new GameEngine(TASK_DESCRIPTION, getGameData);
+  const gameEngine = GameEngine(TASK_DESCRIPTION, getGameData);
   gameEngine.start();
 };
 
