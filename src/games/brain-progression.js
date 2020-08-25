@@ -1,7 +1,7 @@
 import getRandomNumber from '../utils/get-random-number.js';
 import runGameEngine from '../run-game-engine.js';
 
-const TASK_DESCRIPTION = 'What number is missing in the progression?';
+const DESCRIPTION = 'What number is missing in the progression?';
 const AMOUNT_OF_NUMBERS = 10;
 
 const getRandomProgression = (firstNumber, step, amountOfNumbers) => {
@@ -29,7 +29,7 @@ const getGameData = () => {
 };
 
 const runGame = () => {
-  runGameEngine(TASK_DESCRIPTION, getGameData);
+  runGameEngine(DESCRIPTION, getGameData);
 };
 
 export default runGame;

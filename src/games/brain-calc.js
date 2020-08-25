@@ -1,7 +1,7 @@
 import getRandomNumber from '../utils/get-random-number.js';
 import runGameEngine from '../run-game-engine.js';
 
-const TASK_DESCRIPTION = 'What is the result of the expression?';
+const DESCRIPTION = 'What is the result of the expression?';
 
 const SIGNS = {
   PLUS: '+',
@@ -40,7 +40,7 @@ const getGameData = () => {
 };
 
 const runGame = () => {
-  runGameEngine(TASK_DESCRIPTION, getGameData);
+  runGameEngine(DESCRIPTION, getGameData);
 };
 
 export default runGame;

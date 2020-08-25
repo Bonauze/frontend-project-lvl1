@@ -12,7 +12,7 @@ const getLosingMessage = (userName) => `Let's try again, ${userName}!`;
 const getQuestionMessage = (question) => `Question: ${question}`;
 const getErrorMessage = (userAnswer, answer) => `"${userAnswer}" is wrong answer ;(. Correct answer was "${answer}".`;
 
-function runGameEngine(taskDescription, getGameData) {
+function runGameEngine(description, getGameData) {
   const getAnswerToQuestion = (questionText) => readlineSync.question(questionText);
 
   const showMessage = (messageText) => console.log(messageText);
@@ -20,7 +20,7 @@ function runGameEngine(taskDescription, getGameData) {
   const start = () => {
     showMessage(WELCOME_MESSAGE);
     const userName = getAnswerToQuestion(ASK_NAME_MESSAGE);
-    showMessage(taskDescription);
+    showMessage(description);
 
     for (let i = 0; i < ROUNDS_COUNT; i += 1) {
       const { question, answer } = getGameData();

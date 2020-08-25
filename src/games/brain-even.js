@@ -1,7 +1,7 @@
 import getRandomNumber from '../utils/get-random-number.js';
 import runGameEngine from '../run-game-engine.js';
 
-const TASK_DESCRIPTION = 'Answer "yes" if the number is even, otherwise answer "no".';
+const DESCRIPTION = 'Answer "yes" if the number is even, otherwise answer "no".';
 
 const getGameData = () => {
   const number = getRandomNumber(1, 100);
@@ -14,7 +14,7 @@ const getGameData = () => {
 };
 
 const runGame = () => {
-  runGameEngine(TASK_DESCRIPTION, getGameData);
+  runGameEngine(DESCRIPTION, getGameData);
 };
 
 export default runGame;
