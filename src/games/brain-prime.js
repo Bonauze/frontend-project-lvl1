@@ -1,6 +1,6 @@
 import getRandomNumber from '../utils/get-random-number.js';
 import isPrimeNumber from '../utils/is-prime-number.js';
-import GameEngine from '../game-engine.js';
+import runGameEngine from '../run-game-engine.js';
 
 const TASK_DESCRIPTION = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
@@ -15,8 +15,7 @@ const getGameData = () => {
 };
 
 const runGame = () => {
-  const gameEngine = GameEngine(TASK_DESCRIPTION, getGameData);
-  gameEngine.start();
+  runGameEngine(TASK_DESCRIPTION, getGameData);
 };
 
 export default runGame;
