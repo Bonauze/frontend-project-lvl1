@@ -8,10 +8,9 @@ const getGameData = () => {
   const number = getRandomNumber(1, 100);
   const isPrime = isPrimeNumber(number);
 
-  const question = number;
   const answer = isPrime ? 'yes' : 'no';
 
-  return { question, answer };
+  return { question: number, answer };
 };
 
 const runGame = () => {
