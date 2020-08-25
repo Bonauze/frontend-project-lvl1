@@ -17,31 +17,27 @@ function runGameEngine(description, getGameData) {
 
   const showMessage = (messageText) => console.log(messageText);
 
-  const start = () => {
-    showMessage(WELCOME_MESSAGE);
-    const userName = getAnswerToQuestion(ASK_NAME_MESSAGE);
-    showMessage(description);
+  showMessage(WELCOME_MESSAGE);
+  const userName = getAnswerToQuestion(ASK_NAME_MESSAGE);
+  showMessage(description);
 
-    for (let i = 0; i < ROUNDS_COUNT; i += 1) {
-      const { question, answer } = getGameData();
+  for (let i = 0; i < ROUNDS_COUNT; i += 1) {
+    const { question, answer } = getGameData();
 
-      showMessage(getQuestionMessage(question));
+    showMessage(getQuestionMessage(question));
 
-      const userAnswer = getAnswerToQuestion(ANSWER_MESSAGE);
+    const userAnswer = getAnswerToQuestion(ANSWER_MESSAGE);
 
-      if (userAnswer === answer) {
-        showMessage(CORRECT_ANSWER_MESSAGE);
-      } else {
-        showMessage(getErrorMessage(userAnswer, answer));
-        showMessage(getLosingMessage(userName));
-        return;
-      }
+    if (userAnswer === answer) {
+      showMessage(CORRECT_ANSWER_MESSAGE);
+    } else {
+      showMessage(getErrorMessage(userAnswer, answer));
+      showMessage(getLosingMessage(userName));
+      return;
     }
+  }
 
-    showMessage(getVictoryMessage(userName));
-  };
-
-  start();
+  showMessage(getVictoryMessage(userName));
 }
 
 export default runGameEngine;
