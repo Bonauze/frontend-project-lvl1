@@ -1,6 +1,6 @@
 import getRandomNumber from '../utils/get-random-number.js';
 import isPrimeNumber from '../utils/is-prime-number.js';
-import runGameEngine from '../run-game-engine.js';
+import runGameEngine from '../index.js';
 
 const DESCRIPTION = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 

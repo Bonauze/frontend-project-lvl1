@@ -1,5 +1,5 @@
 import getRandomNumber from '../utils/get-random-number.js';
-import runGameEngine from '../run-game-engine.js';
+import runGameEngine from '../index.js';
 
 const DESCRIPTION = 'Answer "yes" if the number is even, otherwise answer "no".';
 

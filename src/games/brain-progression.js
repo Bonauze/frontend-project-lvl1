@@ -1,5 +1,5 @@
 import getRandomNumber from '../utils/get-random-number.js';
-import runGameEngine from '../run-game-engine.js';
+import runGameEngine from '../index.js';
 
 const DESCRIPTION = 'What number is missing in the progression?';
 const AMOUNT_OF_NUMBERS = 10;
