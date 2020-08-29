@@ -12,11 +12,11 @@ const getLosingMessage = (userName) => `Let's try again, ${userName}!`;
 const getQuestionMessage = (question) => `Question: ${question}`;
 const getErrorMessage = (userAnswer, answer) => `"${userAnswer}" is wrong answer ;(. Correct answer was "${answer}".`;
 
-function runGameEngine(description, getGameData) {
-  const getAnswerToQuestion = (questionText) => readlineSync.question(questionText);
+const getAnswerToQuestion = (questionText) => readlineSync.question(questionText);
 
-  const showMessage = (messageText) => console.log(messageText);
+const showMessage = (messageText) => console.log(messageText);
 
+const runGameEngine = (description, getGameData) => {
   showMessage(WELCOME_MESSAGE);
   const userName = getAnswerToQuestion(ASK_NAME_MESSAGE);
   showMessage(description);
@@ -38,6 +38,6 @@ function runGameEngine(description, getGameData) {
   }
 
   showMessage(getVictoryMessage(userName));
-}
+};
 
 export default runGameEngine;

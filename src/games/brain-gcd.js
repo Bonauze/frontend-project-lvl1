@@ -4,16 +4,11 @@ import runGameEngine from '../index.js';
 const DESCRIPTION = 'Find the greatest common divisor of given numbers.';
 
 const getGreatestCommonDivisor = (firstNumber, secondNumber) => {
-  const numbers = [firstNumber, secondNumber].sort().reverse();
-
-  while (numbers[numbers.length - 1] !== 0) {
-    const numbersLength = numbers.length;
-    const lastNumber = numbers[numbersLength - 1];
-    const penultimateNumber = numbers[numbersLength - 2];
-    numbers.push(penultimateNumber % lastNumber);
+  if (secondNumber === 0) {
+    return firstNumber;
   }
 
-  return numbers[numbers.length - 2];
+  return getGreatestCommonDivisor(secondNumber, firstNumber % secondNumber);
 };
 
 const getGameData = () => {

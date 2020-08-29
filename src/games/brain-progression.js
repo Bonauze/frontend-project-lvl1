@@ -5,15 +5,13 @@ const DESCRIPTION = 'What number is missing in the progression?';
 const AMOUNT_OF_NUMBERS = 10;
 
 const getRandomProgression = (firstNumber, step, amountOfNumbers) => {
-  const result = [];
+  const progression = [];
 
   for (let i = 0; i < amountOfNumbers; i += 1) {
-    const lastNumber = result[result.length - 1];
-
-    result.push(lastNumber ? lastNumber + step : firstNumber);
+    progression.push(firstNumber + i * step);
   }
 
-  return result;
+  return progression;
 };
 
 const getGameData = () => {
